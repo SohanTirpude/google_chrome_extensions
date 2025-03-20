@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Jobs By Company",
+  "version": "1.0",
+  "description": "Hide all Job Listing from any company",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_title": "Hide all jobs by Company",
+    "default_popup": "settings/index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+		"https://www.linkedin.com/*"
+      ],
+	  "all_frames": true,
+	  "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "sw.js"
+  }
+}
