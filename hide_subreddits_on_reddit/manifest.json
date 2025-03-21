@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Subreddits on Reddit",
+  "version": "1.0",
+  "description": "Hide Subreddits from r/popular on Reddit",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_title": "ide Subreddits on Reddit",
+    "default_popup": "settings/index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+		"https://www.reddit.com/r/popular/"
+      ],
+	  "all_frames": true
+    }
+  ],
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "sw.js"
+  }
+}

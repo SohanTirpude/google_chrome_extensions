@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide Subreddits from r/popular on Reddit</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <template id="table-item">
+      <tr>
+        <td><span>Subreddit Name</span></td>
+        <td>
+          <button class="delete-button">Delete</button>
+        </td>
+      </tr>
+    </template>
+    <form>
+      <h1>Hide Subreddits from r/popular on Reddit</h1>
+      <section>
+        <h2>Add new Subreddit</h2>
+        <label>
+          <span>Subreddit Name: </span>
+          <input type="text" name="title" placeholder="anime_irl" />
+        </label>
+        <button type="button" id="add-item">Add item</button>
+        <p id="error"></p>
+      </section>
+      <section>
+        <h2>List of blocked Subreddits</h2>
+        <table id="items">
+          <tr>
+            <th>Subreddit Name</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </section>
+    </form>
+  </body>
+</html>
